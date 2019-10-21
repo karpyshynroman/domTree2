@@ -1,5 +1,5 @@
 'use strict';
-let data = {
+const data = {
     "Рыбы": {
         "форель": {},
         "лосось": {}
@@ -21,10 +21,9 @@ function createTree(container, dataVar) {
 
 function createTreeHelper(dataVar) {
     const ul = document.createElement('ul');
-    console.log(Object.keys(dataVar).length);
     if (!Object.keys(dataVar).length)
         return;
-    Object.keys(dataVar).forEach(item => {
+    Object.keys(dataVar).forEach((item) => {
         const li = document.createElement('li');
         li.textContent = item;
         if (createTreeHelper(dataVar[item])){
